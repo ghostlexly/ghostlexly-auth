@@ -1,4 +1,4 @@
-/** @author Tolga Malkoc - GhostLexly@gmail.com */
+/** @author GhostLexly@gmail.com */
 
 import axios from "axios";
 import React, { createContext, useContext, useEffect, useState } from "react";
