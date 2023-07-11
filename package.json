@@ -1,0 +1,28 @@
+{
+  "name": "ghostlexly-auth",
+  "version": "1.0.1",
+  "description": "The best, tiny, robust and easy authentification for NextJS + ExpressJS stack.",
+  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/ghostlexly/ghostlexly-auth.git",
+  "author": "ghostlexly <ghostlexly@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc -d"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/next": "^9.0.0",
+    "@types/node": "^20.4.1",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "axios": "^1.4.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "nookies": "^2.5.2"
+  }
+}
