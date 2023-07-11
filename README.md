@@ -125,6 +125,8 @@ Then, we can call `signOut()` method to logout the user.
 **Example**
 
 ```tsx
+import { useAuth } from "ghostlexly-auth";
+
 export default function LogoutPage() {
   const auth = useAuth();
   auth.signOut({ redirectUrl: "/member-area/login" });
@@ -149,6 +151,8 @@ Then, we can call `session` object to access the user session.
 **Example**
 
 ```tsx
+import { useAuth } from "ghostlexly-auth";
+
 export default function ExamplePage() {
   const auth = useAuth();
 
