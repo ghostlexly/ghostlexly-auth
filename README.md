@@ -22,6 +22,8 @@ The best, tiny, robust, customizable, and easy authentication for Next.js + Expr
 yarn add ghostlexly-auth
 ```
 
+---
+
 ### Add Context provider to your application
 
 We need to wrap our application with the `ghostlexly-auth` context provider so that we can fetch user data within our application.
@@ -58,6 +60,8 @@ export default MyApp;
 
 - **userDataUrl**: The URL path to your API from which we will fetch the user's session data that we can later access using `auth.session`.
 - **cookieExpireInDays**: Cookie's expiration time in number of days. (31 by default)
+
+---
 
 ### Login the user
 
@@ -111,6 +115,8 @@ You can provide two parameters to the `signIn` method:
 - **url**: The path of the API to call for the login.
 - **data**: The data to be sent to the API.
 
+---
+
 ### Logout the user
 
 We first need to declare a `auth` variable with the `useAuth` hook.
@@ -130,6 +136,8 @@ The `signOut()` method remove the user's cookie and redirect to a path.
 You can provide one parameter to the `signOut()` method:
 
 - **redirectUrl**: The path to redirect the user to.
+
+---
 
 ### Get user session
 
@@ -164,6 +172,8 @@ export default function ExamplePage() {
   - in case of success, data will be `Session`.
 - **status**: Enum mapping to two possible session states: `"authenticated" | "unauthenticated"`
 
+---
+
 ### Retrieve user's Access Token
 
 **Client side:**
@@ -187,6 +197,8 @@ export async function getServerSideProps({ req }) {
   console.log(accessToken);
 }
 ```
+
+---
 
 ### Call the api with the `Authorization` header and `Axios`
 
