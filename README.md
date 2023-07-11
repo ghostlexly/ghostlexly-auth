@@ -16,13 +16,13 @@ The best, tiny, robust, customizable, and easy authentication for Next.js + Expr
 
 ## Installation
 
-#### Install package
+### Install package
 
 ```
 yarn add ghostlexly-auth
 ```
 
-#### Add Context provider to your application
+### Add Context provider to your application
 
 We need to wrap our application with the `ghostlexly-auth` context provider so that we can fetch user data within our application.
 
@@ -54,12 +54,12 @@ export default MyApp;
 </GhostlexlyAuthProvider>
 ```
 
-#### `GhostLexlyAuthProvider` options:
+### `GhostLexlyAuthProvider` options:
 
 - **userDataUrl**: The URL path to your API from which we will fetch the user's session data that we can later access using `auth.session`.
 - **cookieExpireInDays**: Cookie's expiration time in number of days. (31 by default)
 
-#### Login the user
+### Login the user
 
 We first need to declare a `auth` variable with the `useAuth` hook.
 Then, we can call `signIn()` method to login the user.
@@ -111,7 +111,7 @@ You can provide two parameters to the `signIn` method:
 - **url**: The path of the API to call for the login.
 - **data**: The data to be sent to the API.
 
-#### Logout the user
+### Logout the user
 
 We first need to declare a `auth` variable with the `useAuth` hook.
 Then, we can call `signOut()` method to logout the user.
@@ -131,7 +131,7 @@ You can provide one parameter to the `signOut()` method:
 
 - **redirectUrl**: The path to redirect the user to.
 
-#### Get user session
+### Get user session
 
 The `session` object in `useAuth` hook is the easiest way to check if someone is signed in and get his data.
 
@@ -164,7 +164,7 @@ export default function ExamplePage() {
   - in case of success, data will be `Session`.
 - **status**: Enum mapping to two possible session states: `"authenticated" | "unauthenticated"`
 
-#### Retrieve user's Access Token
+### Retrieve user's Access Token
 
 **Client side:**
 
@@ -188,7 +188,7 @@ export async function getServerSideProps({ req }) {
 }
 ```
 
-#### Call the api with the `Authorization` header and `Axios`
+### Call the api with the `Authorization` header and `Axios`
 
 This request will automatically include an `Authorization` header with your access token.
 
