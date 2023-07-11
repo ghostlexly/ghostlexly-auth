@@ -1,8 +1,8 @@
 {
   "name": "ghostlexly-auth",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The best, tiny, robust and easy authentification for NextJS + ExpressJS stack.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "files": [
     "dist"
   ],
