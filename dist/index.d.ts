@@ -1,4 +1,4 @@
-/** @author Tolga Malkoc - GhostLexly@gmail.com */
+/** @author GhostLexly@gmail.com */
 import React from "react";
 type ISession = {
     status: "loading" | "authenticated" | "unauthenticated";

@@ -1,5 +1,5 @@
 "use strict";
-/** @author Tolga Malkoc - GhostLexly@gmail.com */
+/** @author GhostLexly@gmail.com */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -67,6 +67,9 @@ function api(req = null) {
         var _a;
         // the status 401 is "Unauthorized"
         if (((_a = error.response) === null || _a === void 0 ? void 0 : _a.status) === 401) {
+            // remove the cookie
+            nookies_1.default.destroy(null, "auth_session", { path: "/" });
+            // redirect to main page
             window.location.href = "/";
         }
         return Promise.reject(error);
@@ -96,6 +99,9 @@ function GhostlexlyAuthProvider({ children, userDataUrl = "/api/me", cookieExpir
                     maxAge: cookieExpireInDays * 24 * 60 * 60,
                     path: "/",
                 });
+                // -- set user data in the context
+                setUserData({ status: "authenticated", data: res.data });
+                // -- return user data
                 return res.data;
             }
             else {

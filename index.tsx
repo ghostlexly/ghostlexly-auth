@@ -46,6 +46,9 @@ function api(req = null) {
     (error) => {
       // the status 401 is "Unauthorized"
       if (error.response?.status === 401) {
+        // remove the cookie
+        nookies.destroy(null, "auth_session", { path: "/" });
+        // redirect to main page
         window.location.href = "/";
       }
 
@@ -83,6 +86,10 @@ function GhostlexlyAuthProvider({ children, userDataUrl = "/api/me", cookieExpir
           path: "/",
         });
 
+        // -- set user data in the context
+        setUserData({ status: "authenticated", data: res.data });
+
+        // -- return user data
         return res.data;
       } else {
         return false;
